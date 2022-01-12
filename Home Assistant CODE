@@ -1,5 +1,6 @@
 #Shell Commands => Communication to Arduino Mega MIDI Bridge to X32
-  #cat -v /dev/ttyUSB0    a lancer dans le terminal
+  #cat -v /dev/ttyUSB0    => to launch manually in the terminal from Home Assistant.
+  
 shell_command:
   #BUS MUTE UNMUTE
   x32_bus1_mute: echo -e -n "a" > /dev/ttyUSB0
@@ -65,7 +66,7 @@ shell_command:
   #SCENE GO CONTROL
   x32_scene1_go: echo -e -n "@" > /dev/ttyUSB0
   x32_scene2_go: echo -e -n "&" > /dev/ttyUSB0
-  #x32_scene3_go: echo -e -n "" > /dev/ttyUSB0 Bypass car symbole programmé " pas pris par HA
+  #x32_scene3_go: echo -e -n """ > /dev/ttyUSB0 Bypass because symbol < " > not accepted by HA.
   x32_scene4_go: echo -e -n "(" > /dev/ttyUSB0
   x32_scene5_go: echo -e -n "!" > /dev/ttyUSB0
   x32_scene6_go: echo -e -n ")" > /dev/ttyUSB0
