@@ -1,5 +1,5 @@
-# USB_serial_to_MIDI_Arduino_Bridge
-USB Serial to MIDI Arduino Bridge 
+# Home_Assistant_USB_serial_to_MIDI_Arduino_Bridge
+Home Assistant USB Serial to MIDI Arduino Bridge 
 
 This solution allows to make a bridge from USB serial to MIDI communication.
 
