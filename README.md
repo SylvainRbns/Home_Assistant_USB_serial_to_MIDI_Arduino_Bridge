@@ -20,3 +20,12 @@ Serial Port 3 is used to send the MIDI informations.
 
 Home Assistant Code is the part to add to the configuration.yaml of Home Assistant.
 
+Serial_To_MIDI.PNG => Schematics 
+
+Home_Assistant_Final_view.PNG => An exemple of the controls programmed in Home Assistant via a Picture Elements Card.
+
+Commands are sent from Home Assistant using "Call a service" => example:   shell.command.x32_input5_mute
+
+This can be used with scripts or automations. I did use some Boolean Inputs in order to set the MUTE/UNMUTE states.
+
+Enjoy and please feel free to contact me if you have ideas to improve this project !
