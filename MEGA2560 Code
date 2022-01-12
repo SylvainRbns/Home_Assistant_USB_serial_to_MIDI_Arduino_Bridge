@@ -1,0 +1,256 @@
+// To use with MEGA2560 Board. This code makes a USB serial to MIDI Bridge. 
+// The original idea was to be able to send MIDI notes from Home Assistant (OS version installed on a Raspberry Pi4) using USB serial.
+
+// Include the arduino MIDI library.
+#include <MIDI.h>
+
+// Create and bind the MIDI interface to the hardware Serial port number 3
+MIDI_CREATE_INSTANCE(HardwareSerial, Serial3, MIDI);
+
+//Send commands from Serial Monitor to MEGA2560
+//variable declarations
+char RXdata = 0;
+
+void setup() {
+  MIDI.begin(MIDI_CHANNEL_OMNI);  // Listen to all incoming messages
+  Serial.begin(9600);//configure default serial port to 9600 (Serial0)
+}
+
+void loop() {
+
+  if(Serial.available() > 0){   //check if any data was received
+    RXdata = Serial.read(); // RXdata value = what has been read on serial port
+
+    switch(RXdata){
+      
+ // MIDI notes encoded here are the notes used to control a Behringer X32 digital audio mixing desk.
+
+      
+ // Outputs BUS 1-16 UNMUTE (CAPITALS) & MUTE (lower case)
+ 
+      case 'A':
+        MIDI.sendControlChange(48,0,2);
+        break;
+      case 'a':
+        MIDI.sendControlChange(48,127,2);
+        break;
+      case 'B':
+        MIDI.sendControlChange(49,0,2);
+        break;
+      case 'b':
+        MIDI.sendControlChange(49,127,2);
+        break;   
+      case 'C':
+        MIDI.sendControlChange(50,0,2);
+        break;
+      case 'c':
+        MIDI.sendControlChange(50,127,2);
+        break;
+      case 'D':
+        MIDI.sendControlChange(51,0,2);
+        break;
+      case 'd':
+        MIDI.sendControlChange(51,127,2);
+        break;
+      case 'E':
+        MIDI.sendControlChange(52,0,2);
+        break;
+      case 'e':
+        MIDI.sendControlChange(52,127,2);
+        break;   
+      case 'F':
+        MIDI.sendControlChange(53,0,2);
+        break;
+      case 'f':
+        MIDI.sendControlChange(53,127,2);
+        break;
+      case 'G':
+        MIDI.sendControlChange(54,0,2);
+        break;
+      case 'g':
+        MIDI.sendControlChange(54,127,2);
+        break;
+      case 'H':
+        MIDI.sendControlChange(55,0,2);
+        break;
+      case 'h':
+        MIDI.sendControlChange(55,127,2);
+        break;   
+      case 'I':
+        MIDI.sendControlChange(56,0,2);
+        break;
+      case 'i':
+        MIDI.sendControlChange(56,127,2);
+        break;
+      case 'J':
+        MIDI.sendControlChange(57,0,2);
+        break;
+      case 'j':
+        MIDI.sendControlChange(57,127,2);
+        break;
+      case 'K':
+        MIDI.sendControlChange(58,0,2);
+        break;
+      case 'k':
+        MIDI.sendControlChange(58,127,2);
+        break;   
+      case 'L':
+        MIDI.sendControlChange(59,0,2);
+        break;
+      case 'l':
+        MIDI.sendControlChange(59,127,2);
+        break;
+      case 'M':
+        MIDI.sendControlChange(60,0,2);
+        break;
+      case 'm':
+        MIDI.sendControlChange(60,127,2);
+        break;   
+      case 'N':
+        MIDI.sendControlChange(61,0,2);
+        break;
+      case 'n':
+        MIDI.sendControlChange(61,127,2);
+        break;
+      case 'O':
+        MIDI.sendControlChange(62,0,2);
+        break;
+      case 'o':
+        MIDI.sendControlChange(62,127,2);
+        break;   
+      case 'P':
+        MIDI.sendControlChange(63,0,2);
+        break;
+      case 'p':
+        MIDI.sendControlChange(63,127,2);
+        break;
+        
+  // Inputs 1-10 UNMUTE (CAPITALS) & MUTE (lower case)
+
+      case 'Q':
+        MIDI.sendControlChange(0,0,2);
+        break;
+      case 'q':
+        MIDI.sendControlChange(0,127,2);
+        break;
+      case 'R':
+        MIDI.sendControlChange(1,0,2);
+        break;
+      case 'r':
+        MIDI.sendControlChange(1,127,2);
+        break;   
+      case 'S':
+        MIDI.sendControlChange(2,0,2);
+        break;
+      case 's':
+        MIDI.sendControlChange(2,127,2);
+        break;
+      case 'T':
+        MIDI.sendControlChange(3,0,2);
+        break;
+      case 't':
+        MIDI.sendControlChange(3,127,2);
+        break;
+      case 'U':
+        MIDI.sendControlChange(4,0,2);
+        break;
+      case 'u':
+        MIDI.sendControlChange(4,127,2);
+        break;   
+      case 'V':
+        MIDI.sendControlChange(5,0,2);
+        break;
+      case 'v':
+        MIDI.sendControlChange(5,127,2);
+        break;
+      case 'W':
+        MIDI.sendControlChange(6,0,2);
+        break;
+      case 'w':
+        MIDI.sendControlChange(6,127,2);
+        break;
+      case 'X':
+        MIDI.sendControlChange(7,0,2);
+        break;
+      case 'x':
+        MIDI.sendControlChange(7,127,2);
+        break;   
+      case 'Y':
+        MIDI.sendControlChange(8,0,2);
+        break;
+      case 'y':
+        MIDI.sendControlChange(8,127,2);
+        break;
+      case 'Z':
+        MIDI.sendControlChange(9,0,2);
+        break;
+      case 'z':
+        MIDI.sendControlChange(9,127,2);
+        break;
+        
+  // Outputs LEVEL Control
+
+   //BUS 11 Level Control
+      case '1':
+      //-5dB 
+        MIDI.sendControlChange(58,80,1);
+        break;
+       case '2':
+      //0dB
+        MIDI.sendControlChange(58,96,1);
+        break;      
+       case '3':
+      //+10dB
+        MIDI.sendControlChange(58,127,1);
+        break;
+   //BUS 5 Level Control
+      case '4':
+      //-5dB
+        MIDI.sendControlChange(52,80,1);
+        break;
+       case '5':
+      //0dB
+        MIDI.sendControlChange(52,96,1);
+        break;      
+       case '6':
+      //+10dB
+        MIDI.sendControlChange(52,127,1);
+        break;
+
+        
+  // Scenes Fire Control
+
+      case '@':
+      // Scene1
+        MIDI.sendProgramChange(1,1);
+        break;
+      
+      case '&':
+      // Scene2
+        MIDI.sendProgramChange(2,1);
+        break;
+
+      case '"':
+      // Scene3
+        MIDI.sendProgramChange(3,1);
+        break;
+
+      case '(':
+      // Scene4
+        MIDI.sendProgramChange(4,1);
+        break;
+        
+      case '!':
+      // Scene5
+        MIDI.sendProgramChange(5,1);
+        break;
+
+      case ')':
+      // Scene6
+        MIDI.sendProgramChange(6,1);
+        break;
+  
+    }
+ }
+
+}
