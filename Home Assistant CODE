@@ -1,0 +1,71 @@
+#Shell Commands => Communication to Arduino Mega MIDI Bridge to X32
+  #cat -v /dev/ttyUSB0    a lancer dans le terminal
+shell_command:
+  #BUS MUTE UNMUTE
+  x32_bus1_mute: echo -e -n "a" > /dev/ttyUSB0
+  x32_bus1_unmute: echo -e -n "A" > /dev/ttyUSB0
+  x32_bus2_mute: echo -e -n "b" > /dev/ttyUSB0
+  x32_bus2_unmute: echo -e -n "B" > /dev/ttyUSB0
+  x32_bus3_mute: echo -e -n "c" > /dev/ttyUSB0
+  x32_bus3_unmute: echo -e -n "C" > /dev/ttyUSB0
+  x32_bus4_mute: echo -e -n "d" > /dev/ttyUSB0
+  x32_bus4_unmute: echo -e -n "D" > /dev/ttyUSB0
+  x32_bus5_mute: echo -e -n "e" > /dev/ttyUSB0
+  x32_bus5_unmute: echo -e -n "E" > /dev/ttyUSB0
+  x32_bus6_mute: echo -e -n "f" > /dev/ttyUSB0
+  x32_bus6_unmute: echo -e -n "F" > /dev/ttyUSB0
+  x32_bus7_mute: echo -e -n "g" > /dev/ttyUSB0
+  x32_bus7_unmute: echo -e -n "G" > /dev/ttyUSB0
+  x32_bus8_mute: echo -e -n "h" > /dev/ttyUSB0
+  x32_bus8_unmute: echo -e -n "H" > /dev/ttyUSB0
+  x32_bus9_mute: echo -e -n "i" > /dev/ttyUSB0
+  x32_bus9_unmute: echo -e -n "I" > /dev/ttyUSB0
+  x32_bus10_mute: echo -e -n "j" > /dev/ttyUSB0
+  x32_bus10_unmute: echo -e -n "J" > /dev/ttyUSB0
+  x32_bus11_mute: echo -e -n "k" > /dev/ttyUSB0
+  x32_bus11_unmute: echo -e -n "K" > /dev/ttyUSB0
+  x32_bus12_mute: echo -e -n "l" > /dev/ttyUSB0
+  x32_bus12_unmute: echo -e -n "L" > /dev/ttyUSB0
+  x32_bus13_mute: echo -e -n "m" > /dev/ttyUSB0
+  x32_bus13_unmute: echo -e -n "M" > /dev/ttyUSB0
+  x32_bus14_mute: echo -e -n "n" > /dev/ttyUSB0
+  x32_bus14_unmute: echo -e -n "N" > /dev/ttyUSB0
+  x32_bus15_mute: echo -e -n "o" > /dev/ttyUSB0
+  x32_bus15_unmute: echo -e -n "O" > /dev/ttyUSB0
+  x32_bus16_mute: echo -e -n "p" > /dev/ttyUSB0
+  x32_bus16_unmute: echo -e -n "P" > /dev/ttyUSB0
+  #INPUT MUTE UNMUTE
+  x32_input1_mute: echo -e -n "q" > /dev/ttyUSB0
+  x32_input1_unmute: echo -e -n "Q" > /dev/ttyUSB0
+  x32_input2_mute: echo -e -n "r" > /dev/ttyUSB0
+  x32_input2_unmute: echo -e -n "R" > /dev/ttyUSB0
+  x32_input3_mute: echo -e -n "s" > /dev/ttyUSB0
+  x32_input3_unmute: echo -e -n "S" > /dev/ttyUSB0
+  x32_input4_mute: echo -e -n "t" > /dev/ttyUSB0
+  x32_input4_unmute: echo -e -n "T" > /dev/ttyUSB0
+  x32_input5_mute: echo -e -n "u" > /dev/ttyUSB0
+  x32_input5_unmute: echo -e -n "U" > /dev/ttyUSB0
+  x32_input6_mute: echo -e -n "v" > /dev/ttyUSB0
+  x32_input6_unmute: echo -e -n "V" > /dev/ttyUSB0
+  x32_input7_mute: echo -e -n "w" > /dev/ttyUSB0
+  x32_input7_unmute: echo -e -n "W" > /dev/ttyUSB0
+  x32_input8_mute: echo -e -n "x" > /dev/ttyUSB0
+  x32_input8_unmute: echo -e -n "X" > /dev/ttyUSB0
+  x32_input9_mute: echo -e -n "y" > /dev/ttyUSB0
+  x32_input9_unmute: echo -e -n "Y" > /dev/ttyUSB0
+  x32_input10_mute: echo -e -n "z" > /dev/ttyUSB0
+  x32_input10_unmute: echo -e -n "Z" > /dev/ttyUSB0
+  #BUS LEVEL CONTROL
+  x32_bus5_level_low: echo -e -n "4" > /dev/ttyUSB0
+  x32_bus5_level_0db: echo -e -n "5" > /dev/ttyUSB0
+  x32_bus5_level_high: echo -e -n "6" > /dev/ttyUSB0
+  x32_bus11_level_low: echo -e -n "1" > /dev/ttyUSB0
+  x32_bus11_level_0db: echo -e -n "2" > /dev/ttyUSB0
+  x32_bus11_level_high: echo -e -n "3" > /dev/ttyUSB0
+  #SCENE GO CONTROL
+  x32_scene1_go: echo -e -n "@" > /dev/ttyUSB0
+  x32_scene2_go: echo -e -n "&" > /dev/ttyUSB0
+  #x32_scene3_go: echo -e -n "" > /dev/ttyUSB0 Bypass car symbole programmé " pas pris par HA
+  x32_scene4_go: echo -e -n "(" > /dev/ttyUSB0
+  x32_scene5_go: echo -e -n "!" > /dev/ttyUSB0
+  x32_scene6_go: echo -e -n ")" > /dev/ttyUSB0
