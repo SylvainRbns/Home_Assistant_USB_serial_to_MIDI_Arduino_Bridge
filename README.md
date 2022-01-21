@@ -6,7 +6,7 @@ This solution allows to make a bridge from USB serial to MIDI communication.
 The aim of this project was to be able to send MIDI notes from Home Assistant (running as OS on a Raspberry Pi4) to a Behringer X32 digital Audio Mixing Desk.
 
 This command has to be launched in the Home assistant terminal in order to work:
-cat -v /dev/ttyUSB0 .
+cat -v /dev/ttyUSB0 
 
 I currently need to re-launch this command in the terminal after each reboot.
 
