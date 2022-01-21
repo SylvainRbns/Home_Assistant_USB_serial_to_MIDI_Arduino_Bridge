@@ -19,7 +19,7 @@ Communication between Raspberry Pi4 and MEGA2560 is done on default serial port.
 
 Serial Port 3 is used to send the MIDI informations.
 
-"Home Assistant Code" is the part to add to the configuration.yaml of Home Assistant.
+"Home Assistant CODE" is the part to add to the configuration.yaml of Home Assistant.
 
 "Serial_To_MIDI.PNG" => Schematics 
 
